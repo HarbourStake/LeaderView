@@ -19,8 +19,28 @@
           text-align: center;
           font-size: 1.5em;
       }
-      h1, h3 {
+      main {
+          max-width: 1200px;
+          margin: 40px auto;
+          padding: 0 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 40px; /* Space between the links and the calendar */
+      }
+      .content-card {
+          background-color: #ffffff;
+          border-radius: 8px;
+          padding: 30px;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      }
+      h1, h2, h3 {
           color: #4a4a80;
+          margin-top: 0;
+      }
+      h1 {
+          border-bottom: 2px solid #f4f4f9;
+          padding-bottom: 10px;
+          margin-bottom: 20px;
       }
       ul, dl {
           list-style-type: none;
@@ -38,10 +58,21 @@
           color: #0056b3;
           text-decoration: underline;
       }
+      .calendar-wrapper {
+          width: 100%;
+          overflow: hidden;
+          border-radius: 4px;
+      }
+      iframe {
+          width: 100%;
+          border: solid 1px #ccc;
+          border-radius: 4px;
+      }
       footer {
           background: #4a4a80;
           height: 30px;
           width: 100%;
+          margin-top: 40px;
       }
   </style>
 </head>
@@ -50,94 +81,106 @@
       Harbour Stake - Leader Links
   </header>
   <main>
-      <h1>Bookmarks</h1>
-      <dl>
-          <dt>
-              <h3>Harbour Stake</h3>
-              <dl>
-                  <dt>
-                      <h3>General</h3>
-                      <ul>
-                          <li>
-                              <a href="https://www.churchofjesuschrist.org/calendar">
-                                  Church Website | Church Calendar
-                              </a>
-                          </li>
-                          <li>
-                              <a href="https://lcr.churchofjesuschrist.org/?lang=eng">
-                                  Church Website | Leader and Clerk Resources
-                              </a>
-                          </li>
-                      </ul>
-                  </dt>
-                  <dt>
-                      <h3>Stake Presidency</h3>
-                      <ul>
-                          <li>
-                              <a href="https://drive.google.com/drive/folders/1mN3svMiYvsjRaltdYpxjUWfZlt0eLyhq">
-                                  Google Drive | Stake Presidency Folder
-                              </a>
-                          </li>
-                          <li>
-                              <a href="https://drive.google.com/drive/folders/1Q-UpjY7rmS-3LOQSn2uzdqwd1y0cRIJe">
-                                  Google Drive | Meeting Agendas and Minutes
-                              </a>
-                          </li>
-                          <li>
-                              <a href="https://calendar.google.com/calendar/u/0?cid=aGFyYm91cnN0YWtlMjNAZ21haWwuY29t">
-                                  Google Calendar | Events
-                              </a>
-                          </li>
-                      </ul>
-                  </dt>
-                  <dt>
-                      <h3>Bishop Council</h3>
-                      <ul>
-                          <li>
-                              <a href="https://drive.google.com/drive/folders/1hB_x5tnXti5fLNrMFt-COrTANQtt0r23">
-                                  Google Drive | Meeting Agendas and Minutes 
-                              </a>
-                          </li>
-                      </ul>
-                  </dt>
-                  <dt>
-                      <h3>High Council</h3>
-                      <ul>
-                          <li>
-                              <a href="https://docs.google.com/spreadsheets/d/1cYLI5JR6W9bdB7vYNZzJgjbz9QYNuJj89FR8ERO37E0/edit?gid=530443899#gid=530443899">
-                                  Google Sheet | High Council Assignments
-                              </a>
-                          </li>
-                            <li>
-                              <a href="https://harbour-stake-business.base44.app/">
-                                  Google Sheet | Stake Business Tracker
-                              </a>
-                          </li>
-                      </ul>
-                  </dt>
-                  <dt>
-                      <h3>Stake Council</h3>
-                      <ul>
-                          <li>
-                              <a href="https://drive.google.com/drive/folders/1cMMHml36v-jDvvuWoHv5uSCyrC1EUFpT?usp=drive_link">
-                                  Google Drive | Meeting Agendas and Minutes
-                              </a>
- 			  </li>
-                          <li>
-                              <a href="https://drive.google.com/drive/folders/1eIByTTqYDruJcckqhRbDG2OC9gXwPkxX">
-                                  Google Drive | Stake Speaking Assignments
-                              </a>  
-                          </li>
-                          <li>
-                              <a href="https://docs.google.com/forms/d/e/1FAIpQLScgep_3OVWh0ToaYLaVNXQGLy8fH4MvDgrXeTn1cQBYqrZpaw/viewform">
-                                  Google Form | Your Speaking Preference (Multi-unit or Single unit Speaking Day)
-                              </a>
-                          </li>
-                      </ul>
-                  </dt>
-              </dl>
-          </dt>
-      </dl>
+      <!-- Links Section -->
+      <section class="content-card">
+          <h1>Bookmarks</h1>
+          <dl>
+              <dt>
+                  <h2>Harbour Stake</h2>
+                  <dl>
+                      <dt>
+                          <h3>General</h3>
+                          <ul>
+                              <li>
+                                  <a href="https://www.churchofjesuschrist.org/calendar" target="_blank">
+                                      Church Website | Church Calendar
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://lcr.churchofjesuschrist.org/?lang=eng" target="_blank">
+                                      Church Website | Leader and Clerk Resources
+                                  </a>
+                              </li>
+                          </ul>
+                      </dt>
+                      <dt>
+                          <h3>Stake Presidency</h3>
+                          <ul>
+                              <li>
+                                  <a href="https://drive.google.com/drive/folders/1mN3svMiYvsjRaltdYpxjUWfZlt0eLyhq" target="_blank">
+                                      Google Drive | Stake Presidency Folder
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://drive.google.com/drive/folders/1Q-UpjY7rmS-3LOQSn2uzdqwd1y0cRIJe" target="_blank">
+                                      Google Drive | Meeting Agendas and Minutes
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://calendar.google.com/calendar/u/0?cid=aGFyYm91cnN0YWtlMjNAZ21haWwuY29t" target="_blank">
+                                      Google Calendar | Events
+                                  </a>
+                              </li>
+                          </ul>
+                      </dt>
+                      <dt>
+                          <h3>Bishop Council</h3>
+                          <ul>
+                              <li>
+                                  <a href="https://drive.google.com/drive/folders/1hB_x5tnXti5fLNrMFt-COrTANQtt0r23" target="_blank">
+                                      Google Drive | Meeting Agendas and Minutes 
+                                  </a>
+                              </li>
+                          </ul>
+                      </dt>
+                      <dt>
+                          <h3>High Council</h3>
+                          <ul>
+                              <li>
+                                  <a href="https://docs.google.com/spreadsheets/d/1cYLI5JR6W9bdB7vYNZzJgjbz9QYNuJj89FR8ERO37E0/edit?gid=530443899#gid=530443899" target="_blank">
+                                      Google Sheet | High Council Assignments
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://harbour-stake-business.base44.app/" target="_blank">
+                                      Google Sheet | Stake Business Tracker
+                                  </a>
+                              </li>
+                          </ul>
+                      </dt>
+                      <dt>
+                          <h3>Stake Council</h3>
+                          <ul>
+                              <li>
+                                  <a href="https://drive.google.com/drive/folders/1cMMHml36v-jDvvuWoHv5uSCyrC1EUFpT?usp=drive_link" target="_blank">
+                                      Google Drive | Meeting Agendas and Minutes
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="https://drive.google.com/drive/folders/1eIByTTqYDruJcckqhRbDG2OC9gXwPkxX" target="_blank">
+                                      Google Drive | Stake Speaking Assignments
+                                  </a>  
+                              </li>
+                              <li>
+                                  <a href="https://docs.google.com/forms/d/e/1FAIpQLScgep_3OVWh0ToaYLaVNXQGLy8fH4MvDgrXeTn1cQBYqrZpaw/viewform" target="_blank">
+                                      Google Form | Your Speaking Preference
+                                  </a>
+                              </li>
+                          </ul>
+                      </dt>
+                  </dl>
+              </dt>
+          </dl>
+      </section>
+
+      <!-- Calendar Section -->
+      <section class="content-card">
+          <h1>Stake Leader Calendar</h1>
+          <div class="calendar-wrapper">
+              <!-- Replaced src with combined calendar link, kept width 100% and added mode=AGENDA -->
+              <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Pacific%2FAuckland&mode=AGENDA&showPrint=0&src=YjZiNzQ2M2I5NjhlMzBkOWFiZTdjN2M1OWVmMzFiODdhYzM0NGVmYjA3Y2NkMjM2NDY3YmFmMDlhNjNjODk2M0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZGIzMGM2MTI5YjllOGZkNDY5ZDZkNjg5NmVlNDY5NTI2YzFiMDNlNzUyNmQ4YmIwYmY1MmFmM2RmMWRiOTkyMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23d50000&color=%2333b679" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+          </div>
+      </section>
   </main>
   <footer></footer>
 </body>
