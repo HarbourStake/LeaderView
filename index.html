@@ -1,187 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harbour Stake - Leader Links</title>
-  <style>
-      body {
-          font-family: Arial, sans-serif;
-          background-color: #f4f4f9;
-          color: #333;
-          margin: 0;
-          padding: 0;
-      }
-      header {
-          background: #4a4a80;
-          color: #fff;
-          padding: 20px;
-          text-align: center;
-          font-size: 1.5em;
-      }
-      main {
-          max-width: 1200px;
-          margin: 40px auto;
-          padding: 0 20px;
-          display: flex;
-          flex-direction: column;
-          gap: 40px; /* Space between the links and the calendar */
-      }
-      .content-card {
-          background-color: #ffffff;
-          border-radius: 8px;
-          padding: 30px;
-          box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      }
-      h1, h2, h3 {
-          color: #4a4a80;
-          margin-top: 0;
-      }
-      h1 {
-          border-bottom: 2px solid #f4f4f9;
-          padding-bottom: 10px;
-          margin-bottom: 20px;
-      }
-      ul, dl {
-          list-style-type: none;
-          padding-left: 20px;
-      }
-      li, dt {
-          margin: 10px 0;
-      }
-      a {
-          text-decoration: none;
-          color: #007BFF;
-          font-weight: bold;
-      }
-      a:hover {
-          color: #0056b3;
-          text-decoration: underline;
-      }
-      .calendar-wrapper {
-          width: 100%;
-          overflow: hidden;
-          border-radius: 4px;
-      }
-      iframe {
-          width: 100%;
-          border: solid 1px #ccc;
-          border-radius: 4px;
-      }
-      footer {
-          background: #4a4a80;
-          height: 30px;
-          width: 100%;
-          margin-top: 40px;
-      }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harbour Stake - Leader Links</title>
+    
+    <!-- Google Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    
+    <style>
+        /* Base Colors and Styling */
+        :root {
+            --primary: #005587; 
+            --bg: #f4f7f6;
+            --surface: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-light);
+            margin-top: 0;
+        }
+
+        /* Dashboard Grid Layout */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Individual Card Styling */
+        .card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.25rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Link Styling */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-top: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            background-color: #f0f4f8;
+            color: var(--primary);
+        }
+
+        .material-symbols-outlined {
+            color: var(--text-light);
+            transition: color 0.2s ease;
+        }
+
+        a:hover .material-symbols-outlined {
+            color: var(--primary);
+        }
+
+        /* New Style for Custom Image Icons */
+        .custom-link-icon {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .calendar-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+    </style>
 </head>
 <body>
-  <header>
-      Harbour Stake - Leader Links
-  </header>
-  <main>
-      <!-- Links Section -->
-      <section class="content-card">
-          <h1>Bookmarks</h1>
-          <dl>
-              <dt>
-                  <h2>Harbour Stake</h2>
-                  <dl>
-                      <dt>
-                          <h3>General</h3>
-                          <ul>
-                              <li>
-                                  <a href="https://www.churchofjesuschrist.org/calendar" target="_blank">
-                                      Church Website | Church Calendar
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="https://lcr.churchofjesuschrist.org/?lang=eng" target="_blank">
-                                      Church Website | Leader and Clerk Resources
-                                  </a>
-                              </li>
-                          </ul>
-                      </dt>
-                      <dt>
-                          <h3>Stake Presidency</h3>
-                          <ul>
-                              <li>
-                                  <a href="https://drive.google.com/drive/folders/1mN3svMiYvsjRaltdYpxjUWfZlt0eLyhq" target="_blank">
-                                      Google Drive | Stake Presidency Folder
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="https://drive.google.com/drive/folders/1Q-UpjY7rmS-3LOQSn2uzdqwd1y0cRIJe" target="_blank">
-                                      Google Drive | Meeting Agendas and Minutes
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="https://calendar.google.com/calendar/u/0?cid=aGFyYm91cnN0YWtlMjNAZ21haWwuY29t" target="_blank">
-                                      Google Calendar | Events
-                                  </a>
-                              </li>
-                          </ul>
-                      </dt>
-                      <dt>
-                          <h3>Bishop Council</h3>
-                          <ul>
-                              <li>
-                                  <a href="https://drive.google.com/drive/folders/1hB_x5tnXti5fLNrMFt-COrTANQtt0r23" target="_blank">
-                                      Google Drive | Meeting Agendas and Minutes 
-                                  </a>
-                              </li>
-                          </ul>
-                      </dt>
-                      <dt>
-                          <h3>High Council</h3>
-                          <ul>
-                              <li>
-                                  <a href="https://docs.google.com/spreadsheets/d/1cYLI5JR6W9bdB7vYNZzJgjbz9QYNuJj89FR8ERO37E0/edit?gid=530443899#gid=530443899" target="_blank">
-                                      Google Sheet | High Council Assignments
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="https://harbour-stake-business.base44.app/" target="_blank">
-                                      Google Sheet | Stake Business Tracker
-                                  </a>
-                              </li>
-                          </ul>
-                      </dt>
-                      <dt>
-                          <h3>Stake Council</h3>
-                          <ul>
-                              <li>
-                                  <a href="https://drive.google.com/drive/folders/1cMMHml36v-jDvvuWoHv5uSCyrC1EUFpT?usp=drive_link" target="_blank">
-                                      Google Drive | Meeting Agendas and Minutes
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="https://drive.google.com/drive/folders/1eIByTTqYDruJcckqhRbDG2OC9gXwPkxX" target="_blank">
-                                      Google Drive | Stake Speaking Assignments
-                                  </a>  
-                              </li>
-                              <li>
-                                  <a href="https://docs.google.com/forms/d/e/1FAIpQLScgep_3OVWh0ToaYLaVNXQGLy8fH4MvDgrXeTn1cQBYqrZpaw/viewform" target="_blank">
-                                      Google Form | Your Speaking Preference
-                                  </a>
-                              </li>
-                          </ul>
-                      </dt>
-                  </dl>
-              </dt>
-          </dl>
-      </section>
 
-      <!-- Calendar Section -->
-      <section class="content-card">
-          <h1>Stake Leader Calendar</h1>
-          <div class="calendar-wrapper">
-              <!-- Replaced src with combined calendar link, kept width 100% and added mode=AGENDA -->
-              <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Pacific%2FAuckland&mode=AGENDA&showPrint=0&src=YjZiNzQ2M2I5NjhlMzBkOWFiZTdjN2M1OWVmMzFiODdhYzM0NGVmYjA3Y2NkMjM2NDY3YmFmMDlhNjNjODk2M0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZGIzMGM2MTI5YjllOGZkNDY5ZDZkNjg5NmVlNDY5NTI2YzFiMDNlNzUyNmQ4YmIwYmY1MmFmM2RmMWRiOTkyMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23d50000&color=%2333b679" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-          </div>
-      </section>
-  </main>
-  <footer></footer>
+    <header>
+        <h1>Harbour Stake - Leader Links</h1>
+        <p>Resource portal for Stake Leadership</p>
+    </header>
+
+    <!-- JavaScript injects the cards here -->
+    <main id="dashboard-container" class="dashboard"></main>
+
+   <!-- CALENDAR SECTION -->
+    <section class="calendar-section">
+        <h2 style="color: var(--primary); margin-top: 0; margin-bottom: 1rem;">Stake Leader Calendar</h2>
+        <div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; border-radius: 8px;">
+            <iframe 
+                src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Pacific%2FAuckland&mode=AGENDA&showPrint=0&src=YjZiNzQ2M2I5NjhlMzBkOWFiZTdjN2M1OWVmMzFiODdhYzM0NGVmYjA3Y2NkMjM2NDY3YmFmMDlhNjNjODk2M0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZGIzMGM2MTI5YjllOGZkNDY5ZDZkNjg5NmVlNDY5NTI2YzFiMDNlNzUyNmQ4YmIwYmY1MmFmM2RmMWRiOTkyMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23d50000&color=%2333b679" 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                frameborder="0" 
+                scrolling="no">
+            </iframe>
+        </div>
+    </section>
+
+    <script>
+        // ==========================================
+        // ADD OR REMOVE LINKS HERE
+        // ==========================================
+        const stakeData = [
+            {
+                category: "General",
+                headerIcon: "public",
+                links: [
+                    { name: "Church Calendar", url: "https://www.churchofjesuschrist.org/calendar", icon: "event" },
+                    { name: "Leader and Clerk Resources", url: "https://lcr.churchofjesuschrist.org/?lang=eng", icon: "manage_accounts" }
+                ]
+            },
+            {
+                category: "Stake Presidency",
+                headerIcon: "groups",
+                links: [
+                    { name: "Stake Presidency Folder", url: "https://drive.google.com/drive/folders/1mN3svMiYvsjRaltdYpxjUWfZlt0eLyhq", icon: "folder_shared" },
+                    { name: "Meeting Agendas and Minutes", url: "https://drive.google.com/drive/folders/1Q-UpjY7rmS-3LOQSn2uzdqwd1y0cRIJe", icon: "description" },
+                    { name: "Google Calendar Events", url: "https://calendar.google.com/calendar/u/0?cid=aGFyYm91cnN0YWtlMjNAZ21haWwuY29t", icon: "calendar_month" }
+                ]
+            },
+            {
+                category: "Bishop Council",
+                headerIcon: "account_balance",
+                links: [
+                    { name: "Meeting Agendas and Minutes", url: "https://drive.google.com/drive/folders/1hB_x5tnXti5fLNrMFt-COrTANQtt0r23", icon: "description" }
+                ]
+            },
+            {
+                category: "High Council",
+                headerIcon: "assignment_ind",
+                links: [
+                    { name: "High Council Assignments", url: "https://docs.google.com/spreadsheets/d/1cYLI5JR6W9bdB7vYNZzJgjbz9QYNuJj89FR8ERO37E0/edit?gid=530443899#gid=530443899", icon: "table" },
+                    { name: "Stake Business Tracker (SBT)", url: "https://harbour-stake-business.base44.app/", imageIcon: "image_3ada4b.jpg" },
+                    { name: "SBT Help Videos", url: "https://drive.google.com/drive/folders/1NRrOM3eCFuJ3DgyUgjVLsuYJ61WLpp8k?usp=sharing", icon: "video_library" }
+                ]
+            },
+            {
+                category: "Stake Council",
+                headerIcon: "forum",
+                links: [
+                    { name: "Meeting Agendas and Minutes", url: "https://drive.google.com/drive/folders/1cMMHml36v-jDvvuWoHv5uSCyrC1EUFpT?usp=drive_link", icon: "description" },
+                    { name: "Stake Speaking Assignments", url: "https://drive.google.com/drive/folders/1eIByTTqYDruJcckqhRbDG2OC9gXwPkxX", icon: "record_voice_over" },
+                    { name: "Your Speaking Preference", url: "https://docs.google.com/forms/d/e/1FAIpQLScgep_3OVWh0ToaYLaVNXQGLy8fH4MvDgrXeTn1cQBYqrZpaw/viewform", icon: "checklist" }
+                ]
+            }
+        ];
+
+        // ==========================================
+        // THE ENGINE: BUILDS THE CARDS
+        // ==========================================
+        const container = document.getElementById('dashboard-container');
+
+        stakeData.forEach(section => {
+            const card = document.createElement('section');
+            card.className = 'card';
+
+            const header = document.createElement('h2');
+            header.innerHTML = `<span class="material-symbols-outlined">${section.headerIcon}</span> ${section.category}`;
+            card.appendChild(header);
+
+            const list = document.createElement('ul');
+            section.links.forEach(link => {
+                const listItem = document.createElement('li');
+                
+                let iconHtml = '';
+                if (link.imageIcon) {
+                    iconHtml = `<img src="${link.imageIcon}" alt="${link.name} icon" class="custom-link-icon">`;
+                } else if (link.icon) {
+                    iconHtml = `<span class="material-symbols-outlined">${link.icon}</span>`;
+                } else {
+                    iconHtml = `<span class="material-symbols-outlined">link</span>`;
+                }
+
+                listItem.innerHTML = `
+                    <a href="${link.url}" target="_blank">
+                        ${iconHtml}
+                        ${link.name}
+                    </a>
+                `;
+                list.appendChild(listItem);
+            });
+            
+            card.appendChild(list);
+            container.appendChild(card);
+        });
+    </script>
 </body>
 </html>
